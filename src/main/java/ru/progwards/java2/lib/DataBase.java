@@ -33,6 +33,26 @@ public enum DataBase {
                 this.image = image;
             }
 
+            public String getLogin() {
+                return login;
+            }
+
+            public String getPassword() {
+                return password;
+            }
+
+            public String getName() {
+                return name;
+            }
+
+            public boolean isIs_mentor() {
+                return is_mentor;
+            }
+
+            public String getImage() {
+                return image;
+            }
+
             @Override
             public String toString() { return login; }
         }
@@ -63,6 +83,26 @@ public enum DataBase {
                 this.duration = duration;
                 this.student = student;
                 this.comment = comment;
+            }
+
+            public String getMentor() {
+                return mentor;
+            }
+
+            public long getStart() {
+                return start;
+            }
+
+            public long getDuration() {
+                return duration;
+            }
+
+            public String getStudent() {
+                return student;
+            }
+
+            public String getComment() {
+                return comment;
             }
         }
 
@@ -103,6 +143,22 @@ public enum DataBase {
                 this.start = start;
                 this.duration = duration;
             }
+
+            public String getMentor() {
+                return mentor;
+            }
+
+            public int getDay_of_week() {
+                return day_of_week;
+            }
+
+            public long getStart() {
+                return start;
+            }
+
+            public long getDuration() {
+                return duration;
+            }
         }
 
         public static class Key {
@@ -139,6 +195,14 @@ public enum DataBase {
             public Record(String name, String value) {
                 this.name = name;
                 this.value = value;
+            }
+
+            public String getName() {
+                return name;
+            }
+
+            public String getValue() {
+                return value;
             }
         }
 
