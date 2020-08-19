@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public enum DataBase {
     INSTANCE;
@@ -114,6 +115,20 @@ public enum DataBase {
                 this.mentor = mentor;
                 this.start = start;
             }
+
+            @Override
+            public boolean equals(Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+                Key key = (Key) o;
+                return start == key.start &&
+                        mentor.equals(key.mentor);
+            }
+
+            @Override
+            public int hashCode() {
+                return Objects.hash(mentor, start);
+            }
         }
 
         private Consultations() {
@@ -170,6 +185,21 @@ public enum DataBase {
                 this.mentor = mentor;
                 this.day_of_week = day_of_week;
                 this.start = start;
+            }
+
+            @Override
+            public boolean equals(Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+                Key key = (Key) o;
+                return day_of_week == key.day_of_week &&
+                        start == key.start &&
+                        mentor.equals(key.mentor);
+            }
+
+            @Override
+            public int hashCode() {
+                return Objects.hash(mentor, day_of_week, start);
             }
         }
 
