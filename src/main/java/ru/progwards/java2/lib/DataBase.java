@@ -22,16 +22,29 @@ public enum DataBase {
         public static class User {
             public final String login;
             public final String password;
+            public final boolean needChangePassword;
             public final String name;
             public final boolean is_mentor;
+            public final String email;
+            public final String progwardsAccountLink;
+            public final String discordName;
             public final String image;
 
-            public User(String login, String password, String name, boolean is_mentor, String image) {
+            public User(String login, String password, boolean needChangePassword, String name, boolean is_mentor, String email, String progwardsAccountLink, String discordName, String image) {
                 this.login = login;
                 this.password = password;
+                this.needChangePassword = needChangePassword;
                 this.name = name;
                 this.is_mentor = is_mentor;
+                this.email = email;
+                this.progwardsAccountLink = progwardsAccountLink;
+                this.discordName = discordName;
                 this.image = image;
+            }
+
+            // конструктор оставлен для совместимости
+            public User(String login, String password, String name, boolean is_mentor, String image) {
+                this(login, password, true, name, is_mentor, "", "", "", image);
             }
 
             public String getLogin() {
@@ -42,12 +55,28 @@ public enum DataBase {
                 return password;
             }
 
+            public boolean isNeedChangePassword() {
+                return needChangePassword;
+            }
+
             public String getName() {
                 return name;
             }
 
             public boolean isIs_mentor() {
                 return is_mentor;
+            }
+
+            public String getEmail() {
+                return email;
+            }
+
+            public String getProgwardsAccountLink() {
+                return progwardsAccountLink;
+            }
+
+            public String getDiscordName() {
+                return discordName;
             }
 
             public String getImage() {
